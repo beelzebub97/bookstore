@@ -1,0 +1,97 @@
+:root {
+  --color-primary: #e94560;
+  --color-dark: #1a1a2e;
+  --color-mid: #16213e;
+  --color-light: #f7f7f7;
+  --color-white: #ffffff;
+  --color-border: #e0e0e0;
+  --color-muted: #666;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.09);
+  --transition: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  background: var(--color-light);
+  color: #1f2328;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Book Grid ─────────────────────────── */
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Buttons ────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+}
+
+.btn-dark {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+/* ── Page wrapper ───────────────────────── */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+/* ── Card ───────────────────────────────── */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
